@@ -42,19 +42,19 @@ defineProps({
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal text-sm sm:text-base px-1 font-medium space-x-2">
                         <li>
-                            <NavLink href="/" :active="$page.component === 'Home'">Home</NavLink>
+                            <Link href="/" :class="{ 'active': $page.component === 'Home' }">Home</Link>
                         </li>
                         <li>
-                            <NavLink href="/marketplace" :active="$page.component === 'Marketplace'">Marketplace</NavLink>
+                            <Link href="/marketplace" :class="{ 'active': $page.component === 'Marketplace' }">Marketplace</Link>
                         </li>
                         <li>
-                            <NavLink href="/help" :active="$page.component === 'Help'">Help</NavLink>
+                            <Link href="/help" :class="{ 'active': $page.component === 'Help' }">Help</Link>
                         </li>
                         <li>
-                            <NavLink href="/about" :active="$page.component === 'About'">About</NavLink>
+                            <Link href="/about" :class="{ 'active': $page.component === 'About' }">About</Link>
                         </li>
                         <li>
-                            <NavLink href="/contact" :active="$page.component === 'Contact'">Contact</NavLink>
+                            <Link href="/contact" :class="{ 'active': $page.component === 'Contact' }">Contact</Link>
                         </li>
                     </ul>
                 </div>
