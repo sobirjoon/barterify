@@ -33,10 +33,10 @@ const logout = () => {
 
         <Banner />
 
-        <div class="bg-gray-100 dark:bg-gray-900">
-            <nav class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+        <div class="bg-gray-100 dark:bg-gray-900 ">
+            <nav class="bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700">
                 <!-- Primary Navigation Menu -->
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
                         <div class="flex">
                             <!-- Logo -->
@@ -51,55 +51,28 @@ const logout = () => {
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
+                                <NavLink :href="route('dashboard.listings')" :active="route().current('dashboard.listings')">
+                                    My Listings
+                                </NavLink>
+                                <NavLink :href="route('dashboard.trades')" :active="route().current('dashboard.trades')">
+                                    Active Trades
+                                </NavLink>
+                                <NavLink :href="route('dashboard.history')" :active="route().current('dashboard.history')">
+                                    Trade History
+                                </NavLink>
+                                <NavLink :href="route('dashboard.requests')" :active="route().current('dashboard.requests')">
+                                    Trade Requests
+                                </NavLink>
+                                <NavLink :href="route('dashboard.messages')" :active="route().current('dashboard.messages')">
+                                    Messages
+                                </NavLink>
+                                <NavLink :href="route('dashboard.settings')" :active="route().current('dashboard.settings')">
+                                    Settings
+                                </NavLink>
                             </div>
                         </div>
 
-                        <div class="hidden sm:flex sm:items-center sm:ms-6">
-                            <!-- Settings Dropdown -->
-                            <div class="ms-3 relative">
-                                <Dropdown align="right" width="48">
-                                    <template #trigger>
-                                        <button v-if="$page.props.jetstream.managesProfilePhotos" class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                            <img class="size-8 rounded-full object-cover" :src="$page.props.auth.user.profile_photo_url" :alt="$page.props.auth.user.name">
-                                        </button>
 
-                                        <span v-else class="inline-flex rounded-md">
-                                            <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50 dark:active:bg-gray-700 transition ease-in-out duration-150">
-                                                {{ $page.props.auth.user.name }}
-
-                                                <svg class="ms-2 -me-0.5 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                                </svg>
-                                            </button>
-                                        </span>
-                                    </template>
-
-                                    <template #content>
-                                        <!-- Account Management -->
-                                        <div class="block px-4 py-2 text-xs text-gray-400">
-                                            Manage Account
-                                        </div>
-
-                                        <DropdownLink :href="route('profile.show')">
-                                            Profile
-                                        </DropdownLink>
-
-                                        <DropdownLink v-if="$page.props.jetstream.hasApiFeatures" :href="route('api-tokens.index')">
-                                            API Tokens
-                                        </DropdownLink>
-
-                                        <div class="border-t border-gray-200 dark:border-gray-600" />
-
-                                        <!-- Authentication -->
-                                        <form @submit.prevent="logout">
-                                            <DropdownLink as="button">
-                                                Log Out
-                                            </DropdownLink>
-                                        </form>
-                                    </template>
-                                </Dropdown>
-                            </div>
-                        </div>
 
                         <!-- Hamburger -->
                         <div class="-me-2 flex items-center sm:hidden">
@@ -136,6 +109,24 @@ const logout = () => {
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('dashboard.listings')" :active="route().current('dashboard.listings')">
+                            My Listings
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('dashboard.trades')" :active="route().current('dashboard.trades')">
+                            Active Trades
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('dashboard.history')" :active="route().current('dashboard.history')">
+                            Trade History
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('dashboard.requests')" :active="route().current('dashboard.requests')">
+                            Trade Requests
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('dashboard.messages')" :active="route().current('dashboard.messages')">
+                            Messages
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('dashboard.settings')" :active="route().current('dashboard.settings')">
+                            Settings
+                        </ResponsiveNavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->
@@ -161,7 +152,7 @@ const logout = () => {
             </nav>
 
             <!-- Page Heading -->
-            <header v-if="$slots.header" class="bg-white dark:bg-gray-800 shadow">
+            <header v-if="$slots.header" class="max-w-7xl mx-auto bg-base-100 mt-2 border-r border-l border-b border-gray-200 dark:border-gray-700">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     <slot name="header" />
                 </div>
