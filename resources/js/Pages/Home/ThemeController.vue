@@ -5,7 +5,7 @@ import { themeChange } from 'theme-change'
 
 // Initialize theme change functionality without persisting to localStorage`
 onMounted(() => {
-    themeChange(false)
+    themeChange()
 })
 
 const darkMode = ref(false)
@@ -14,8 +14,7 @@ const darkMode = ref(false)
 <template>
     <label class="swap swap-rotate">
         <!-- this hidden checkbox controls the state -->
-        <input v-model="darkMode" type="checkbox" class="theme-controller hidden" :data-toggle-theme="darkMode ? 'dracula' : 'emerald'"
-            data-act-class="ACTIVECLASS" />
+        <input v-model="darkMode" type="checkbox" class="theme-controller hidden" :data-toggle-theme="darkMode ? 'emerald' : 'dracula'" data-act-class="ACTIVECLASS" />
         <!-- sun icon -->
         <svg class="swap-off h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path
