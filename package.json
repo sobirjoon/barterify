@@ -23,6 +23,7 @@
     "dependencies": {
         "@ark-ui/vue": "^4.8.0",
         "@headlessui/vue": "^1.7.23",
+        "nprogress": "^0.2.0",
         "theme-change": "^2.5.0"
     }
 }
